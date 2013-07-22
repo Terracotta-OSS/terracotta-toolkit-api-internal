@@ -3,6 +3,7 @@
  */
 package org.terracotta.toolkit.internal.search;
 
+import org.terracotta.toolkit.collections.ToolkitMap;
 import org.terracotta.toolkit.search.attribute.ToolkitAttributeExtractor;
 
 import java.util.Map;
@@ -14,4 +15,9 @@ public interface ToolkitAttributeExtractorInternal<K, V> extends ToolkitAttribut
    * attributes to be indexed.
    */
   Map<String, Class<?>> getInitialTypeSchema();
+
+  /**
+   * XXX Provide destination for search attribute schema
+   */
+  ToolkitMap<String, String> createAttributeMap();
 }
