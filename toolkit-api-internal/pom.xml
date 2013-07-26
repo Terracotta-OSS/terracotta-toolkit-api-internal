@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.terracotta.toolkit</groupId>
     <artifactId>terracotta-toolkit-api-internal-root</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -12,10 +12,6 @@
   <packaging>jar</packaging>
 
   <properties>
-  
-    <metadata.build.jenkins.url>http://jenkinsmaster.terracotta.lan:9000/job/terracotta-toolkit-internal-api_trunk_releaser/19/</metadata.build.jenkins.url>
-    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
-    <metadata.svn.revision>40918</metadata.svn.revision>
   </properties>
 
   <dependencies>
