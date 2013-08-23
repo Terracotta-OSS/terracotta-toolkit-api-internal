@@ -19,7 +19,7 @@
   </modules>
 
   <properties>
-    <toolkit-api.version>2.3</toolkit-api.version>
+    <toolkit-api.version>2.4</toolkit-api.version>
   </properties>
 
   <repositories>
