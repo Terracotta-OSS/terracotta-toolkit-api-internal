@@ -130,6 +130,27 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
   void putVersioned(K key, V value, long version);
 
   void putVersioned(K key, V value, long version, int createTimeInSecs, int customMaxTTISeconds, int customMaxTTLSeconds);
+  
+  /**
+   * This method is required for WAN specific usecase. NOT to be used by other Toolkit clients.
+   * It puts the new value only if the key was absent or the existing value's version is older than the given version. 
+   * @param key
+   * @param value 
+   * @param version the new version
+   */
+  void putIfAbsentOrOlderVersion(K key, V value, long version); 
+  
+  /**
+   * This method is required for WAN specific usecase. NOT to be used by other Toolkit clients.
+   * It puts the new value only if the key was absent or the existing value's version is older than the given version. 
+   * @param key
+   * @param value
+   * @param version
+   * @param createTimeInSecs
+   * @param customMaxTTISeconds
+   * @param customMaxTTLSeconds
+   */
+  void putIfAbsentOrOlderVersion(K key, V value, long version, int createTimeInSecs, int customMaxTTISeconds, int customMaxTTLSeconds);
 
   /**
    * Dispose the Store from this node. If present elsewhere, the key-value store is still usable. Trying to use the
@@ -142,4 +163,5 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
   void removeVersioned(Object key, long version);
 
   void registerVersionUpdateListener(VersionUpdateListener listener);
+
 }
