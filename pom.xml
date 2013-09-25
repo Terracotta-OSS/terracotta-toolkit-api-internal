@@ -5,13 +5,13 @@
     <artifactId>forge-parent</artifactId>
     <groupId>org.terracotta.forge</groupId>
     <version>3.1</version>
-    <relativePath/>
+    <relativePath />
   </parent>
 
   <name>terracotta-toolkit-api-internal-root</name>
   <groupId>org.terracotta.toolkit</groupId>
   <artifactId>terracotta-toolkit-api-internal-root</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>
