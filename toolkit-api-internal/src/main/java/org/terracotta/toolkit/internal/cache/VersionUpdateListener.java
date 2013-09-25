@@ -5,7 +5,7 @@ package org.terracotta.toolkit.internal.cache;
  */
 public interface VersionUpdateListener<K, V> {
 
-  void onLocalPut(K key, V value, long version);
+  void onLocalPut(K key, V value, long version, int segmentNumber);
 
-  void onLocalRemove(K key, long version);
+  void onLocalRemove(K key, long version, int segmentNumber);
 }
