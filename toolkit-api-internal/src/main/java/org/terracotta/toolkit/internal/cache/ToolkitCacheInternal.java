@@ -163,5 +163,20 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
   void removeVersioned(Object key, long version);
 
   void registerVersionUpdateListener(VersionUpdateListener listener);
+  
+  /**
+   * Return the set of Keys in the given segment of cache
+   * @param segmentIndex
+   * @return
+   */
+  Set<K> keySetForSegment(int segmentIndex);
+  
+  /**
+   * This method returns the {@link VersionedValue} corresponding to the given key.
+   * Note that it wont update the lastAccessedTime and will act as quite GET.
+   * @param key
+   * @return VersionedValue
+   */
+  VersionedValue<V> getVersionedValue(Object key);
 
 }
