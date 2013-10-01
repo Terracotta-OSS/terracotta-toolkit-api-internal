@@ -11,13 +11,6 @@
   <artifactId>terracotta-toolkit-api-internal</artifactId>
   <packaging>jar</packaging>
 
-  <properties>
-  
-    <metadata.build.jenkins.url>http://jenkinsmaster.terracotta.lan:9000/job/terracotta-toolkit-internal-api_trunk_releaser/39/</metadata.build.jenkins.url>
-    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
-    <metadata.svn.revision>41262</metadata.svn.revision>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.terracotta.toolkit</groupId>

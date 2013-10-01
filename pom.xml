@@ -4,8 +4,7 @@
   <parent>
     <artifactId>forge-parent</artifactId>
     <groupId>org.terracotta.forge</groupId>
-    <version>3.1</version>
-    <relativePath />
+    <version>3.7</version>
   </parent>
 
   <name>terracotta-toolkit-api-internal-root</name>
@@ -20,10 +19,6 @@
 
   <properties>
     <toolkit-api.version>2.4</toolkit-api.version>
-  
-    <metadata.build.jenkins.url>http://jenkinsmaster.terracotta.lan:9000/job/terracotta-toolkit-internal-api_trunk_releaser/39/</metadata.build.jenkins.url>
-    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
-    <metadata.svn.revision>41262</metadata.svn.revision>
   </properties>
 
   <repositories>
@@ -47,6 +42,21 @@
       <url>http://www.terracotta.org/download/reflector/releases</url>
     </pluginRepository> 
   </pluginRepositories>
+
+  <distributionManagement>
+    <repository>
+      <id>terracotta-releases</id>
+      <name>Terracotta Releases Repository</name>
+      <url>${terracotta-releases-url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>terracotta-snapshots</id>
+      <uniqueVersion>false</uniqueVersion>
+      <name>Terracotta Snapshots Repository</name>
+      <url>${terracotta-snapshots-url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <scm>
 		<connection>scm:git:git@github.softwareag.com:Terracotta-OSS/terracotta-toolkit-api-internal.git</connection>
 		<developerConnection>scm:git:https://github.softwareag.com/Terracotta-OSS/terracotta-toolkit-api-internal.git</developerConnection>
