@@ -133,16 +133,16 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
   
   /**
    * This method is required for WAN specific usecase. NOT to be used by other Toolkit clients.
-   * It puts the new value only if the key was absent or the existing value's version is older than the given version. 
+   * It puts the new value only if the key was absent. 
    * @param key
    * @param value 
    * @param version the new version
    */
-  void putIfAbsentOrOlderVersion(K key, V value, long version); 
+  void putIfAbsentVersioned(K key, V value, long version); 
   
   /**
    * This method is required for WAN specific usecase. NOT to be used by other Toolkit clients.
-   * It puts the new value only if the key was absent or the existing value's version is older than the given version. 
+   * It puts the new value only if the key was absent. 
    * @param key
    * @param value
    * @param version
@@ -150,7 +150,7 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    * @param customMaxTTISeconds
    * @param customMaxTTLSeconds
    */
-  void putIfAbsentOrOlderVersion(K key, V value, long version, int createTimeInSecs, int customMaxTTISeconds, int customMaxTTLSeconds);
+  void putIfAbsentVersioned(K key, V value, long version, int createTimeInSecs, int customMaxTTISeconds, int customMaxTTLSeconds);
 
   /**
    * Dispose the Store from this node. If present elsewhere, the key-value store is still usable. Trying to use the
@@ -178,5 +178,10 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    * @return VersionedValue
    */
   VersionedValue<V> getVersionedValue(Object key);
+  
+  /**
+   * This method clears the cache but wont generate the server events.
+   */
+  public void clearVersioned();
 
 }
