@@ -184,4 +184,16 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    */
   public void clearVersioned();
 
+  /**
+   * This method submit a request to clear for this cache and returns. The cache {@link size} may not be 0 immediately after this method call.
+   */
+  void quickClear();
+  
+  /**
+   * Returns approximate size of this cache without waiting for all transaction to finish.
+   * 
+   * @return approximate size of this cache
+   */
+  int quickSize();
+  
 }
