@@ -5,6 +5,7 @@ package org.terracotta.toolkit;
 
 import org.terracotta.toolkit.atomic.ToolkitTransactionController;
 import org.terracotta.toolkit.internal.feature.LicenseFeature;
+import org.terracotta.toolkit.internal.feature.NonStopInternalFeature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,11 @@ public final class ToolkitFeatureTypeInternal<T extends ToolkitFeature> {
    * License feature
    */
   public static final ToolkitFeatureTypeInternal<LicenseFeature>               LICENSE     = define(LicenseFeature.class);
+
+  /**
+   * NonStop internal feature
+   */
+  public static final ToolkitFeatureTypeInternal<NonStopInternalFeature>       NONSTOP     = define(NonStopInternalFeature.class);
 
   /**
    * Transaction feature
