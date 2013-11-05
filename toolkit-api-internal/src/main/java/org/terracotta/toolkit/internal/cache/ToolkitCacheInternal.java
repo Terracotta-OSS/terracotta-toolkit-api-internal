@@ -7,6 +7,7 @@ import org.terracotta.toolkit.cache.ToolkitCache;
 import org.terracotta.toolkit.cluster.ClusterNode;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Set;
 
@@ -195,5 +196,54 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    * @return approximate size of this cache
    */
   int quickSize();
+  
+  /**
+   * Removes the entry for a key only if currently mapped to a given value.
+   * This is equivalent to
+   * <pre>
+   *   if (map.containsKey(key) &amp;&amp;comparator.equals(map.get(key), value)) {
+   *       map.remove(key);
+   *       return true;
+   *   } else return false;</pre>
+   * except that the action is performed atomically.
+   *
+   * @param key key with which the specified value is associated
+   * @param value value expected to be associated with the specified key
+   * @param comparator comparator to compare values
+   * @return <tt>true</tt> if the value was removed
+   * @throws UnsupportedOperationException if the <tt>remove</tt> operation
+   *         is not supported by this map
+   * @throws ClassCastException if the key or value is of an inappropriate
+   *         type for this map (optional)
+   * @throws NullPointerException if the specified key or value is null,
+   *         and this map does not permit null keys or values (optional)
+   */
+  boolean remove(Object key, Object value, ToolkitValueComparator<V> comparator);
+
+  /**
+   * Replaces the entry for a key only if currently mapped to a given value.
+   * This is equivalent to
+   * <pre>
+   *   if (map.containsKey(key) &amp;&amp; comparator.equals(map.get(key), oldValue)) {
+   *       map.put(key, newValue);
+   *       return true;
+   *   } else return false;</pre>
+   * except that the action is performed atomically.
+   *
+   * @param key key with which the specified value is associated
+   * @param oldValue value expected to be associated with the specified key
+   * @param newValue value to be associated with the specified key
+   * @param comparator comparator to compare values
+   * @return <tt>true</tt> if the value was replaced
+   * @throws UnsupportedOperationException if the <tt>put</tt> operation
+   *         is not supported by this map
+   * @throws ClassCastException if the class of a specified key or value
+   *         prevents it from being stored in this map
+   * @throws NullPointerException if a specified key or value is null,
+   *         and this map does not permit null keys or values
+   * @throws IllegalArgumentException if some property of a specified key
+   *         or value prevents it from being stored in this map
+   */
+  boolean replace(K key, V oldValue, V newValue, ToolkitValueComparator<V> comparator);
   
 }
