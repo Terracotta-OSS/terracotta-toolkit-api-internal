@@ -218,7 +218,7 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    * @throws NullPointerException if the specified key or value is null,
    *         and this map does not permit null keys or values (optional)
    */
-  boolean remove(Object key, Object value, ToolkitValueComparator<V> comparator);
+ // boolean remove(Object key, Object value, ToolkitValueComparator<V> comparator);
 
   /**
    * Replaces the entry for a key only if currently mapped to a given value.
@@ -244,6 +244,6 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
    * @throws IllegalArgumentException if some property of a specified key
    *         or value prevents it from being stored in this map
    */
-  boolean replace(K key, V oldValue, V newValue, ToolkitValueComparator<V> comparator);
+ // boolean replace(K key, V oldValue, V newValue, ToolkitValueComparator<V> comparator);
   
 }
