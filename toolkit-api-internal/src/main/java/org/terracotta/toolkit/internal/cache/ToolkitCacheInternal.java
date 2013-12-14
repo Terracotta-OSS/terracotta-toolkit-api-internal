@@ -165,6 +165,8 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
 
   void registerVersionUpdateListener(VersionUpdateListener listener);
   
+  void unregisterVersionUpdateListener(VersionUpdateListener listener);
+
   /**
    * Return the set of Keys in the given segment of cache
    * @param segmentIndex
