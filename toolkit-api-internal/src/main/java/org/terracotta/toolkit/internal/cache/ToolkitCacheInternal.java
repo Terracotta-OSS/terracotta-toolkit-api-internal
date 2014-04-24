@@ -7,7 +7,6 @@ import org.terracotta.toolkit.cache.ToolkitCache;
 import org.terracotta.toolkit.cluster.ClusterNode;
 
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.Set;
 
@@ -185,10 +184,18 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
   /**
    * This method clears the cache but wont generate the server events.
    */
-  public void clearVersioned();
+  void clearVersioned();
 
   /**
-   * This method submit a request to clear for this cache and returns. The cache {@link size} may not be 0 immediately after this method call.
+   * GetAll returning values with versions.
+   *
+   * @param keys keys to get
+   * @return map of keys to values with versions.
+   */
+  Map<K, VersionedValue<V>> getAllVersioned(Collection<K> keys);
+
+  /**
+   * This method submit a request to clear for this cache and returns. The cache size may not be 0 immediately after this method call.
    */
   void quickClear();
   
