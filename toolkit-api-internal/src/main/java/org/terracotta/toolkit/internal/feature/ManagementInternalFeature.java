@@ -5,7 +5,6 @@ package org.terracotta.toolkit.internal.feature;
 
 import org.terracotta.toolkit.ToolkitFeature;
 
-import java.io.Serializable;
 import java.util.concurrent.ExecutorService;
 
 /**
@@ -37,7 +36,7 @@ public interface ManagementInternalFeature extends ToolkitFeature {
    *
    * @param event the event.
    */
-  void sendEvent(Serializable event);
+  void sendEvent(ToolkitManagementEvent event);
 
 }
 
