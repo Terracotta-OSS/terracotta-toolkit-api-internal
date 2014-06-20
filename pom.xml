@@ -10,7 +10,7 @@
   <name>terracotta-toolkit-api-internal-root</name>
   <groupId>org.terracotta.toolkit</groupId>
   <artifactId>terracotta-toolkit-api-internal-root</artifactId>
-  <version>1.15-SNAPSHOT</version>
+  <version>1.15</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -19,6 +19,10 @@
 
   <properties>
     <toolkit-api.version>2.5</toolkit-api.version>
+  
+    <metadata.build.jenkins.url>http://jenkins.terracotta.eur.ad.sag:8080/job/terracotta-toolkit-internal-api_trunk_releaser/5/</metadata.build.jenkins.url>
+    <metadata.build.maven.active.profiles>terracotta-repositories,release,tc-publish</metadata.build.maven.active.profiles>
+    <metadata.svn.revision>43866</metadata.svn.revision>
   </properties>
 
   <repositories>
