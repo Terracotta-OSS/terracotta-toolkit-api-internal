@@ -18,7 +18,7 @@
   </modules>
 
   <properties>
-    <toolkit-api.version>2.5</toolkit-api.version>
+    <toolkit-api.version>2.6</toolkit-api.version>
   </properties>
 
   <repositories>
