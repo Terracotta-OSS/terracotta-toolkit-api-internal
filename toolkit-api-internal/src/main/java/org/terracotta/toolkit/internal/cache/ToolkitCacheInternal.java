@@ -50,7 +50,7 @@ public interface ToolkitCacheInternal<K, V> extends ToolkitCache<K, V> {
 
   /**
    * Perform a local unlocked read for the given key.
-   * <p/>
+   * <br>
    * This method performs no locking and thus provides absolutely no visibility guarantees. If the value is not local it
    * will NOT be looked up from elsewhere and null is returned instead - thus one cannot distinguish between a
    * non-existent mapping from one where its present elsewhere. USE WITH CAUTION.

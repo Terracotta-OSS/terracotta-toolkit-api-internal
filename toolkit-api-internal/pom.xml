@@ -11,9 +11,6 @@
   <artifactId>terracotta-toolkit-api-internal</artifactId>
   <packaging>jar</packaging>
 
-  <properties>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.terracotta.toolkit</groupId>
@@ -27,19 +24,27 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.7</version>
+        <configuration>
+          <skip>${skipJavadoc}</skip>
+          <quiet>true</quiet>
+          <source>8</source>
+          <additionalDependencies>
+            <additionalDependency>
+              <groupId>org.terracotta.toolkit</groupId>
+              <artifactId>terracotta-toolkit-api</artifactId>
+              <version>${toolkit-api.version}</version>
+            </additionalDependency>
+          </additionalDependencies>
+        </configuration>
         <executions>
           <execution>
             <phase>package</phase>
             <goals>
               <goal>jar</goal>
             </goals>
-            <configuration>
-              <quiet>true</quiet>
-            </configuration>
           </execution>
         </executions>
-      </plugin>    
+      </plugin>
     </plugins>
   </build>
 
