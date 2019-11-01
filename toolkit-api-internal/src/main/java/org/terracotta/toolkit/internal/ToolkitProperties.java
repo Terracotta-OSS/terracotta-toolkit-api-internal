@@ -3,6 +3,8 @@
  */
 package org.terracotta.toolkit.internal;
 
+import org.terracotta.toolkit.Toolkit;
+
 /**
  * Properties of a {@link Toolkit} instance
  */

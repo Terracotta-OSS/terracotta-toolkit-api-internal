@@ -4,7 +4,7 @@
   <parent>
     <artifactId>forge-parent</artifactId>
     <groupId>org.terracotta.forge</groupId>
-    <version>4.5</version>
+    <version>4.10</version>
   </parent>
 
   <name>terracotta-toolkit-api-internal-root</name>
@@ -18,7 +18,7 @@
   </modules>
 
   <properties>
-    <toolkit-api.version>2.9_JAVA11-SNAPSHOT</toolkit-api.version>
+    <toolkit-api.version>2.9</toolkit-api.version>
   </properties>
 
   <repositories>
@@ -58,7 +58,7 @@
   </distributionManagement>
 
   <scm>
-		<connection>scm:git:git@github.softwareag.com:Terracotta-OSS/terracotta-toolkit-api-internal.git</connection>
-		<developerConnection>scm:git:https://github.softwareag.com/Terracotta-OSS/terracotta-toolkit-api-internal.git</developerConnection>
-	</scm>
+    <connection>scm:git:git@github.softwareag.com:Terracotta-OSS/terracotta-toolkit-api-internal.git</connection>
+    <developerConnection>scm:git:https://github.softwareag.com/Terracotta-OSS/terracotta-toolkit-api-internal.git</developerConnection>
+  </scm>
 </project>
