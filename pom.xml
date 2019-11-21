@@ -4,7 +4,7 @@
   <parent>
     <artifactId>forge-parent</artifactId>
     <groupId>org.terracotta.forge</groupId>
-    <version>4.10</version>
+    <version>4.12</version>
   </parent>
 
   <name>terracotta-toolkit-api-internal-root</name>
@@ -18,7 +18,7 @@
   </modules>
 
   <properties>
-    <toolkit-api.version>2.9</toolkit-api.version>
+    <toolkit-api.version>2.10</toolkit-api.version>
   </properties>
 
   <repositories>
